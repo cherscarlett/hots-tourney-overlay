@@ -1,8 +1,61 @@
+@font-face {
+  font-family: "Metronic";
+  src: url("/fonts/Metronic Pro Regular.otf") format("opentype");
+  font-weight: normal;
+}
+
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+	background: #0d0119 url('/images/global-bg.jpg') top center no-repeat;
+	color:#635e67;
 }
 
 a {
   color: #00B7FF;
+}
+
+h1.title {
+	display:none;
+}
+
+header.chrome {
+	background-color:rgba(13, 1, 25, .7);
+	padding:20px 170px;
+	font-size:.8em;
+	font-family: "Metronic", Sans-Serif, Sans; 
+}
+
+.contents {
+	padding: 0 170px;
+}
+
+.contents header {
+	text-indent: -10000px;
+	background:transparent url('/images/logo.png') 0 -20px no-repeat;
+	height:140px;
+	width:249px;
+	float:left;
+}
+.stream-container {
+	background-color:rgba(13, 1, 25, .7);
+	clear:both;
+}
+.stream {  
+	background:#0d0119;
+	border:3px solid transparent;
+	border-image: linear-gradient(to bottom,#43286b 0,#14324a 100%);
+  	border-image-slice: 1;
+	padding: 3px;
+	float:left;
+}
+object {
+	display:block;
+}
+.chat {
+	float:right;
+}
+.chat iframe {
+	height:470px;
+}
+.tools {
+	float:left;
 }
