@@ -12,7 +12,9 @@ body {
 a {
   color: #00B7FF;
 }
-
+a:hover {
+	color:#FFF;
+}
 h1.title {
 	display:none;
 }
@@ -156,4 +158,21 @@ object {
 }
 .tools > ul > li.active#bracket > a, .tools > ul > li#bracket:hover > a {
 	background-position:-26px -54px;
+}
+
+#about-data {
+	font-family: "Metronic", Sans-Serif, Sans;
+	color:#FFF;
+	background-color:rgba(13, 1, 25, .7);
+	border-radius: 3px;
+	font-size:.8em;
+	padding:25px;
+	position:absolute;
+	width:50%;
+	right:170px;
+	margin-top:25px;
+	z-index: 10;
+}
+#about-data > a.close {
+	float:right;
 }
