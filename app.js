@@ -6,6 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 var teams = require('./data/teams.json');
+var talents = require('./data/talents.json');
 var bracketInfo = require('./data/bracket-info.json');
 
 var routes = require('./routes/index');
@@ -28,6 +29,15 @@ app.use('/', routes);
 
 app.get('/about', function(req, res) {
   res.render('partials/about');
+});
+app.get('/talents', function(req, res) {
+  res.render('partials/talents', {teams: teams, talents: talents});
+});
+app.get('/teams', function(req, res) {
+  res.render('partials/teams', {teams: teams});
+});
+app.get('/bracket', function(req, res) {
+  res.render('partials/bracket', {bracketInfo: bracketInfo});
 });
 
 // catch 404 and forward to error handler

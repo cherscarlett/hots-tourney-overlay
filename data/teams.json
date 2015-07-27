@@ -1,162 +1,167 @@
 {
-	"blue": {
+	"1": {
+		"teamColor" : "blue",
 		"teamName" : "Cloud 9 Maelstrom",
 		"teamLogo" : "/images/c9.png",
-		"player1" : {
-			"name" : "",
-			"hero" : "",
-			"photo" : "",
-			"talents": {
-				"1": "",
-				"4": "",
-				"7": "",
-				"10": "",
-				"13": "",
-				"16": "",
-				"20": ""
+		"players" : {
+			"1" : {
+				"name" : "k1pro",
+				"hero" : "Murky",
+				"photo" : "http://static1.squarespace.com/static/519d9fe3e4b0dd1ef2ceba77/t/54d1952ce4b0bb6a8000d50c/1423021364126/zuna.png?format=500w",
+				"talents": {
+					"1": "",
+					"4": "",
+					"7": "",
+					"10": "",
+					"13": "",
+					"16": "",
+					"20": ""
+				},
+				"heroic": "available"
 			},
-			"heroic": "available"
-
-		},
-		"player2" : {
-			"name" : "",
-			"hero" : "",
-			"photo" : "",
-			"talents": {
-				"1": "",
-				"4": "",
-				"7": "",
-				"10": "",
-				"13": "",
-				"16": "",
-				"20": ""
+			"2" : {
+				"name" : "iDream",
+				"hero" : "Murky",
+				"photo" : "http://static1.squarespace.com/static/519d9fe3e4b0dd1ef2ceba77/t/54d195b7e4b057f396b9d66e/1423021497050/?format=500w",
+				"talents": {
+					"1": "",
+					"4": "",
+					"7": "",
+					"10": "",
+					"13": "",
+					"16": "",
+					"20": ""
+				},
+				"heroic": "available"
 			},
-			"heroic": "available"
-		},
-		"player3" : {
-			"name" : "",
-			"hero" : "",
-			"photo" : "",
-			"talents": {
-				"1": "",
-				"4": "",
-				"7": "",
-				"10": "",
-				"13": "",
-				"16": "",
-				"20": ""
+			"3" : {
+				"name" : "KingCaffeine",
+				"hero" : "Murky",
+				"photo" : "http://static1.squarespace.com/static/519d9fe3e4b0dd1ef2ceba77/t/5476d28ae4b0357694b00c9c/1417073291072/Blank+profile.jpg?format=500w",
+				"talents": {
+					"1": "",
+					"4": "",
+					"7": "",
+					"10": "",
+					"13": "",
+					"16": "",
+					"20": ""
+				},
+				"heroic": "available"
 			},
-			"heroic": "available"
-		},
-		"player4" : {
-			"name" : "",
-			"hero" : "",
-			"photo" : "",
-			"talents": {
-				"1": "",
-				"4": "",
-				"7": "",
-				"10": "",
-				"13": "",
-				"16": "",
-				"20": ""
+			"4" : {
+				"name" : "DunkTrain",
+				"hero" : "Murky",
+				"photo" : "http://static1.squarespace.com/static/519d9fe3e4b0dd1ef2ceba77/t/5476d270e4b01ef39f59ea81/1417073264729/Blank+profile.jpg?format=500w",
+				"talents": {
+					"1": "",
+					"4": "",
+					"7": "",
+					"10": "",
+					"13": "",
+					"16": "",
+					"20": ""
+				},
+				"heroic": "available"
 			},
-			"heroic": "available"
-		},
-		"player5" : {
-			"name" : "",
-			"hero" : "",
-			"photo" : "",
-			"talents": {
-				"1": "",
-				"4": "",
-				"7": "",
-				"10": "",
-				"13": "",
-				"16": "",
-				"20": ""
-			},
-			"heroic": "available"
+			"5" : {
+				"name" : "Fan",
+				"hero" : "Murky",
+				"photo" : "http://static1.squarespace.com/static/519d9fe3e4b0dd1ef2ceba77/t/558e3e94e4b02baad4dc3601/1435385493297/Bicepts?format=500w",
+				"talents": {
+					"1": "",
+					"4": "",
+					"7": "",
+					"10": "",
+					"13": "",
+					"16": "",
+					"20": ""
+				},
+				"heroic": "available"
+			}
 		}
 	},
-	"red" : {
+	"2" : {
+		"teamColor" : "red",
 		"teamName" : "Tempo/Storm",
 		"teamLogo" : "/images/ts.png",
-		"player1" : {
-			"name" : "",
-			"hero" : "",
-			"photo" : "",
-			"talents": {
-				"1": "",
-				"4": "",
-				"7": "",
-				"10": "",
-				"13": "",
-				"16": "",
-				"20": ""
+		"players" : {
+			"1" : {
+				"name" : "Dreadnaught",
+				"hero" : "Murky",
+				"photo" : "https://cdn-tempostorm.netdna-ssl.com/img/team/dreadnaught.jpg",
+				"talents": {
+					"1": "",
+					"4": "",
+					"7": "",
+					"10": "",
+					"13": "",
+					"16": "",
+					"20": ""
+				},
+				"heroic": "available"
 			},
-			"heroic": "available"
+			"2" : {
+				"name" : "Arthelon",
+				"hero" : "Murky",
+				"photo" : "https://cdn-tempostorm.netdna-ssl.com/img/team/arthelon.jpg",
+				"talents": {
+					"1": "",
+					"4": "",
+					"7": "",
+					"10": "",
+					"13": "",
+					"16": "",
+					"20": ""
+				},
+				"heroic": "available"
+			},
+			"3" : {
+				"name" : "So1dier",
+				"hero" : "Murky",
+				"photo" : "https://cdn-tempostorm.netdna-ssl.com/img/team/so1dier.jpg",
+				"talents": {
+					"1": "",
+					"4": "",
+					"7": "",
+					"10": "",
+					"13": "",
+					"16": "",
+					"20": ""
+				},
+				"heroic": "available"
+			},
+			"4" : {
+				"name" : "Kaeyoh",
+				"hero" : "Murky",
+				"photo" : "https://cdn-tempostorm.netdna-ssl.com/img/team/kaeyoh.jpg",
+				"talents": {
+					"1": "",
+					"4": "",
+					"7": "",
+					"10": "",
+					"13": "",
+					"16": "",
+					"20": ""
+				},
+				"heroic": "available"
+			},
+			"5" : {
+				"name" : "Zuna",
+				"hero" : "Murky",
+				"photo" : "https://s3-us-west-2.amazonaws.com/ts-node2/img/team/zuna.jpg",
+				"talents": {
+					"1": "",
+					"4": "",
+					"7": "",
+					"10": "",
+					"13": "",
+					"16": "",
+					"20": ""
+				},
+				"heroic": "available"
+			}
 
-		},
-		"player2" : {
-			"name" : "",
-			"hero" : "",
-			"photo" : "",
-			"talents": {
-				"1": "",
-				"4": "",
-				"7": "",
-				"10": "",
-				"13": "",
-				"16": "",
-				"20": ""
-			},
-			"heroic": "available"
-		},
-		"player3" : {
-			"name" : "",
-			"hero" : "",
-			"photo" : "",
-			"talents": {
-				"1": "",
-				"4": "",
-				"7": "",
-				"10": "",
-				"13": "",
-				"16": "",
-				"20": ""
-			},
-			"heroic": "available"
-		},
-		"player4" : {
-			"name" : "",
-			"hero" : "",
-			"photo" : "",
-			"talents": {
-				"1": "",
-				"4": "",
-				"7": "",
-				"10": "",
-				"13": "",
-				"16": "",
-				"20": ""
-			},
-			"heroic": "available"
-		},
-		"player5" : {
-			"name" : "",
-			"hero" : "",
-			"photo" : "",
-			"talents": {
-				"1": "",
-				"4": "",
-				"7": "",
-				"10": "",
-				"13": "",
-				"16": "",
-				"20": ""
-			},
-			"heroic": "available"
 		}
 	}
 }

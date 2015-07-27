@@ -7,6 +7,7 @@
 body {
 	background: #0d0119 url('/images/global-bg.jpg') top center no-repeat;
 	color:#635e67;
+	font-family: "Metronic", Sans-Serif, Sans;
 }
 
 a {
@@ -23,10 +24,8 @@ header.chrome {
 	background-color:rgba(13, 1, 25, .7);
 	padding:20px 170px;
 	font-size:.8em;
-	font-family: "Metronic", Sans-Serif, Sans; 
 }
 a.about {
-	font-family: Metronic,sans-serif, Sans;
 	font-weight: 700;
 	color: #fff;
 	text-transform: uppercase;
@@ -81,6 +80,7 @@ a.about:hover {
 	padding: 3px;
 	float:left;
 	width:68.2%;
+	position: relative;
 }
 object {
 	display:block;
@@ -136,9 +136,6 @@ object {
 	background-position: -108px -9px;
 }
 
-.tools > ul > li.active > a {
-	cursor:help;
-}
 .tools > ul > li > a {
 	display:block;
 	height:35px;
@@ -164,7 +161,6 @@ object {
 }
 
 #about-data {
-	font-family: "Metronic", Sans-Serif, Sans;
 	color:#FFF;
 	background-color:rgba(13, 1, 25, .7);
 	border-radius: 3px;
@@ -180,4 +176,127 @@ object {
 	float:right;
 	font-size: .75em;
 	text-decoration: none;
+}
+.stream-overlay {
+	position: absolute;
+	left:0;
+	right:0;
+	bottom:30px;
+	top:0;
+}
+.teams-container > .blue {
+	background: url('/images/teams-bg.png') top left repeat, linear-gradient(to right, rgba(0, 0, 0, 1),  rgba(6, 0, 42, .3));
+	float:left;
+}
+.teams-container > .red {
+	float:right;
+	background: url('/images/teams-bg.png') top left repeat, linear-gradient(to left, rgba(0, 0, 0, 1),  rgba(6, 0, 42, .3));
+}
+
+.teams-container > div > h1 {
+	margin:30px 0;
+	position:relative;
+}
+.teams-container > div > h1 > span {
+	/* background: linear-gradient(135deg, #7db9e8 0%,#2989d8 13%, #000111 100%); */
+	background: #213778;
+	width:57px;
+	height:100px;
+	position: relative;
+	text-indent: -10000px;
+	display: block;
+  	transform: rotate(30deg);
+  	margin:0 auto;
+}
+.teams-container > div > h1 > span:before, .teams-container > div > h1 > span:after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: inherit;
+  height: inherit;
+  width: inherit;
+  content: '';
+  transform: rotate(60deg);
+}
+.teams-container > div > h1 > span:after {
+  transform: rotate(-60deg);
+}
+.teams-container > div > h1 > img {
+	max-width:120px;
+	max-height: 78px;
+	position: absolute;
+	top:10px;
+	left:50%;
+	margin-left:-15%;
+}
+.teams-container > div {
+	height:100%;
+	width:33%;
+}
+.team-lineup {
+	text-transform: uppercase;
+	color:#FFF;
+	text-shadow: 0 0 8px #009cff;
+}
+
+.team-lineup {
+	margin-top:-10px;
+}
+.team-lineup > li {
+	padding:5px 0 10px 60px;
+	clear:both;
+}
+
+.team-lineup > li.even {
+	margin-left:35px;
+}
+
+.team-lineup > li > span.player-photo {
+	float:left;
+	position: relative;
+	z-index: 5;
+	margin:-8px 0 0 -38px;
+}
+.team-lineup > li > span.player-photo > img {
+	display:block;
+	max-height:46px;
+	max-width:46px;
+	padding:2px;
+	border-radius:50px;
+  	box-shadow: 0 0 4px #c8bfdf;
+	background: linear-gradient(to bottom,#43286b 0,#14324a 100%);
+}
+.team-lineup > li > span:not(.player-photo)	 {
+	display:block;
+	position: relative;
+	font-size:.9em;
+	padding:2px 0;
+	z-index: 4;
+	text-indent: 6px;
+}
+
+.team-lineup > li > span:not(.player-photo):after {
+	background: rgba(255, 255, 255, .1);
+	content:'';
+	height:20px;
+	width:140px;
+	display:block;
+	transform: scaleX(1) scaleY(1) scaleZ(1) skewX(-20deg);
+  	transform-origin: 50% 50% 0;
+  	box-shadow: 0 0 4px #c8bfdf;
+  	position: absolute;
+  	top:0;
+  	margin-top:-2px;
+  	margin-left:-10px;
+}
+
+.team-lineup > li > span.hero {
+	font-size:.7em;
+	line-height: 15px;
+}
+
+.team-lineup > li > span.hero:after {
+	width:100px;
+	height:15px;
+	margin-top:0px;
 }
