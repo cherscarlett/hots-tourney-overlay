@@ -21,6 +21,6 @@ function closeWindow(e, object) {
 function resizeStream(e) {
 	var $s = $(".stream"), 
 		w = $s.innerWidth(),
-		h = w*(9/16);
+		h = w*(3/5);
 	$s.css("height", h+"px");
 }
