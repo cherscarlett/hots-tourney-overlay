@@ -23,7 +23,39 @@ header.chrome {
 	font-size:.8em;
 	font-family: "Metronic", Sans-Serif, Sans; 
 }
-
+a.about {
+	font-family: Metronic,sans-serif, Sans;
+	font-weight: 700;
+	color: #fff;
+	text-transform: uppercase;
+	line-height: 1.2;
+	background-color: #0c3c59;
+	background: linear-gradient(#19193f,#0f325b);
+	border: 2px solid #0f2e63;
+	padding: .7em 2em;
+	position: relative;
+	display: block;
+	border-width: 1px;
+	border-bottom: 1px solid #1f62b5;
+	text-shadow: 0 0 1rem #009cff;
+	margin-top: .6rem;
+	padding: .7rem 1rem;
+	font-size: .8rem;
+	text-align: center;
+	margin-left: 3px;
+	text-decoration: none;
+	float:right;
+	position: relative;
+	margin-top:50px;
+  	transition: all .6s ease;
+}
+a.about:hover {
+	background-color:#18388a;
+	background:linear-gradient(#1b0d41,#18388a);
+	border-color:#182e83;
+	color:#fff;
+	border-bottom-color: #FFF;
+}
 .contents {
 	padding: 0 170px;
 }
@@ -52,10 +84,76 @@ object {
 }
 .chat {
 	float:right;
+	margin:3px;
 }
-.chat iframe {
-	height:470px;
+.chat > iframe {
+	height:467px;
+	width:294px;
 }
 .tools {
 	float:left;
+}
+.tools > ul {
+	padding-top:15px;
+	width:25px;
+}
+.tools > ul > li > a > span {
+	position: absolute;
+	opacity: 0;
+	display: block;
+	color:#FFF;
+	text-transform: uppercase;
+	font-family: "Metronic", Sans-Serif, Sans;
+	height:10px;
+	padding:12px;
+	background-color:rgba(13, 1, 25, .4);
+	border-radius: 3px;
+	margin-left:30px;
+	margin-top:6px;
+}
+.tools > ul > li > a:hover > span {
+	opacity:1;
+}
+.tools > ul > li {
+	height:50px;
+	width:45px;
+	background: transparent url('/images/navigation-buttons.png') -5px -9px no-repeat;
+	cursor: pointer;
+	position: relative;
+	z-index: 100;
+	margin-top: -30px;
+}
+.tools > ul > li.active {
+	background-position:-52px -8px;
+}
+
+.tools > ul > li:not(.active):hover{ 
+	background-position: -108px -9px;
+}
+
+.tools > ul > li.active > a {
+	cursor:help;
+}
+.tools > ul > li > a {
+	display:block;
+	height:35px;
+	width:25px;
+	margin: 15px 6px 0 6px;
+	background:transparent url('/images/nav-icons.png') 1px -19px no-repeat;
+}
+.tools > ul > li#teams > a {
+	background-position: 1px 17px;
+}
+.tools > ul > li#bracket > a {
+	background-position: 1px -54px;
+}
+
+.tools > ul > li.active > a, .tools > ul > li:hover > a {
+	background-position:-26px -19px;
+}
+.tools > ul > li.active#teams > a, .tools > ul > li#teams:hover > a {
+	background-position:-25px 17px;
+}
+.tools > ul > li.active#bracket > a, .tools > ul > li#bracket:hover > a {
+	background-position:-26px -54px;
 }

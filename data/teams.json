@@ -1,0 +1,162 @@
+{
+	"blue": {
+		"teamName" : "Cloud 9 Maelstrom",
+		"teamLogo" : "/images/c9.png",
+		"player1" : {
+			"name" : "",
+			"hero" : "",
+			"photo" : "",
+			"talents": {
+				"1": "",
+				"4": "",
+				"7": "",
+				"10": "",
+				"13": "",
+				"16": "",
+				"20": ""
+			},
+			"heroic": "available"
+
+		},
+		"player2" : {
+			"name" : "",
+			"hero" : "",
+			"photo" : "",
+			"talents": {
+				"1": "",
+				"4": "",
+				"7": "",
+				"10": "",
+				"13": "",
+				"16": "",
+				"20": ""
+			},
+			"heroic": "available"
+		},
+		"player3" : {
+			"name" : "",
+			"hero" : "",
+			"photo" : "",
+			"talents": {
+				"1": "",
+				"4": "",
+				"7": "",
+				"10": "",
+				"13": "",
+				"16": "",
+				"20": ""
+			},
+			"heroic": "available"
+		},
+		"player4" : {
+			"name" : "",
+			"hero" : "",
+			"photo" : "",
+			"talents": {
+				"1": "",
+				"4": "",
+				"7": "",
+				"10": "",
+				"13": "",
+				"16": "",
+				"20": ""
+			},
+			"heroic": "available"
+		},
+		"player5" : {
+			"name" : "",
+			"hero" : "",
+			"photo" : "",
+			"talents": {
+				"1": "",
+				"4": "",
+				"7": "",
+				"10": "",
+				"13": "",
+				"16": "",
+				"20": ""
+			},
+			"heroic": "available"
+		}
+	},
+	"red" : {
+		"teamName" : "Tempo/Storm",
+		"teamLogo" : "/images/ts.png",
+		"player1" : {
+			"name" : "",
+			"hero" : "",
+			"photo" : "",
+			"talents": {
+				"1": "",
+				"4": "",
+				"7": "",
+				"10": "",
+				"13": "",
+				"16": "",
+				"20": ""
+			},
+			"heroic": "available"
+
+		},
+		"player2" : {
+			"name" : "",
+			"hero" : "",
+			"photo" : "",
+			"talents": {
+				"1": "",
+				"4": "",
+				"7": "",
+				"10": "",
+				"13": "",
+				"16": "",
+				"20": ""
+			},
+			"heroic": "available"
+		},
+		"player3" : {
+			"name" : "",
+			"hero" : "",
+			"photo" : "",
+			"talents": {
+				"1": "",
+				"4": "",
+				"7": "",
+				"10": "",
+				"13": "",
+				"16": "",
+				"20": ""
+			},
+			"heroic": "available"
+		},
+		"player4" : {
+			"name" : "",
+			"hero" : "",
+			"photo" : "",
+			"talents": {
+				"1": "",
+				"4": "",
+				"7": "",
+				"10": "",
+				"13": "",
+				"16": "",
+				"20": ""
+			},
+			"heroic": "available"
+		},
+		"player5" : {
+			"name" : "",
+			"hero" : "",
+			"photo" : "",
+			"talents": {
+				"1": "",
+				"4": "",
+				"7": "",
+				"10": "",
+				"13": "",
+				"16": "",
+				"20": ""
+			},
+			"heroic": "available"
+		}
+	}
+}

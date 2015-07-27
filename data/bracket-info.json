@@ -1,0 +1,132 @@
+{
+	"upper" : { 
+		"8" : {
+			"1" : {
+				"team1" : {
+					"name" : "Cloud 9 Maelstrom",
+					"wins" : 0,
+					"winner" : false 
+				},
+				"team2" : {
+					"name" : "Tempo/Storm",
+					"wins" : 0,
+					"winner" : false 
+				}
+			},
+			"2" : {
+				"team1" : {
+					"name" : "Cloud 9 Maelstrom",
+					"wins" : 0,
+					"winner" : false 
+				},
+				"team2" : {
+					"name" : "Tempo/Storm",
+					"wins" : 0,
+					"winner" : false 
+				}
+			},
+			"3" : {
+				"team1" : {
+					"name" : "Cloud 9 Maelstrom",
+					"wins" : 0,
+					"winner" : false 
+				},
+				"team2" : {
+					"name" : "Tempo/Storm",
+					"wins" : 0,
+					"winner" : false 
+				}
+			},
+			"4" : {
+				"team1" : {
+					"name" : "Cloud 9 Maelstrom",
+					"wins" : 0,
+					"winner" : false 
+				},
+				"team2" : {
+					"name" : "Tempo/Storm",
+					"wins" : 0,
+					"winner" : false 
+				}
+			}
+		},
+		"4" : {
+			"1" : {
+				"team1" : {
+					"name" : "Cloud 9 Maelstrom",
+					"wins" : 0,
+					"winner" : false 
+				},
+				"team2" : {
+					"name" : "Tempo/Storm",
+					"wins" : 0,
+					"winner" : false 
+				}
+			},
+			"2" : {
+				"team1" : {
+					"name" : "Cloud 9 Maelstrom",
+					"wins" : 0,
+					"winner" : false 
+				},
+				"team2" : {
+					"name" : "Tempo/Storm",
+					"wins" : 0,
+					"winner" : false 
+				}
+			}
+		},
+		"2" : {
+			"team1" : {
+				"name" : "Cloud 9 Maelstrom",
+				"wins" : 0,
+				"winner" : false 
+			},
+			"team2" : {
+				"name" : "Tempo/Storm",
+				"wins" : 0,
+				"winner" : false 
+			}
+		}
+	},
+	"lower" : {
+		"4" : {
+			"1" : {
+				"team1" : {
+					"name" : "Cloud 9 Maelstrom",
+					"wins" : 0,
+					"winner" : false 
+				},
+				"team2" : {
+					"name" : "Tempo/Storm",
+					"wins" : 0,
+					"winner" : false 
+				}
+			},
+			"2" : {
+				"team1" : {
+					"name" : "Cloud 9 Maelstrom",
+					"wins" : 0,
+					"winner" : false 
+				},
+				"team2" : {
+					"name" : "Tempo/Storm",
+					"wins" : 0,
+					"winner" : false 
+				}
+			}
+		},
+		"2" : {
+			"team1" : {
+				"name" : "Cloud 9 Maelstrom",
+				"wins" : 0,
+				"winner" : false 
+			},
+			"team2" : {
+				"name" : "Tempo/Storm",
+				"wins" : 0,
+				"winner" : false 
+			}
+		}
+	}
+}
