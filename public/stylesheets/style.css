@@ -208,6 +208,10 @@ object {
   	transform: rotate(30deg);
   	margin:0 auto;
 }
+
+.teams-container > .red > h1 > span {
+	background:#b41222;
+}
 .teams-container > div > h1 > span:before, .teams-container > div > h1 > span:after {
   position: absolute;
   top: 0;
@@ -231,7 +235,7 @@ object {
 }
 .teams-container > div {
 	height:100%;
-	width:33%;
+	width:250px;
 }
 .team-lineup {
 	text-transform: uppercase;
@@ -263,8 +267,11 @@ object {
 	max-width:46px;
 	padding:2px;
 	border-radius:50px;
-  	box-shadow: 0 0 4px #c8bfdf;
+  	box-shadow: 0 0 4px #54a9f4;
 	background: linear-gradient(to bottom,#43286b 0,#14324a 100%);
+}
+.red > .team-lineup > li > span.player-photo > img {
+  	box-shadow: 0 0 4px #f58a9c;
 }
 .team-lineup > li > span:not(.player-photo)	 {
 	display:block;

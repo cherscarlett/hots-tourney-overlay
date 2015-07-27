@@ -1,0 +1,7 @@
+each team in teams
+	ul(class= team.teamColor+"-talents")
+		each player in team.players
+			li
+				ol
+					each talent, i in player.talents
+						li= talent
