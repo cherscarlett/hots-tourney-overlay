@@ -307,3 +307,68 @@ object {
 	height:15px;
 	margin-top:0px;
 }
+.talents-container {
+	width:450px;
+	margin:0 auto;
+	top:auto;
+}
+.talents-container > ul {
+	width:50%;
+	float:left;
+}
+
+.talents-container > ul > li {
+	clear:both;
+}
+
+
+.talents-container > ul > li > span.hero-name {
+	text-transform: uppercase;
+	padding:0 5px;
+	color:#FFF;
+	text-shadow: 0 0 8px #009cff;
+	font-size: .8em;
+	float:left;
+	display: block;
+	width:75px;
+	line-height: 25px;
+	text-align: right;
+	height:20px;
+	background: linear-gradient(to left, rgba(0, 0, 0, 1),  rgba(6, 0, 42, .3));
+}
+
+.talents-container > ul.red-talents > li > span.hero-name {
+	float: right;
+	text-align: left;
+	background: linear-gradient(to right, rgba(0, 0, 0, 1),  rgba(6, 0, 42, .3));
+}
+.talents-container > ul > li > ol > li {
+	float:left;
+	height:20px;
+	width:20px;
+}
+
+.talents-container > ul > li > ol > li > span {
+	position: absolute;
+	opacity: 0;
+	display: block;
+	color:#FFF;
+	text-transform: uppercase;
+	font-family: "Metronic", Sans-Serif, Sans;
+	height:10px;
+	padding:12px;
+	background-color:rgba(13, 1, 25, .4);
+	border-radius: 3px;
+	margin-left:0px;
+	margin-top:1px;
+	white-space: nowrap;
+}
+
+.talents-container > ul > li > ol > li:hover > span {
+	opacity: 1;
+}
+.talents-container > ul > li > ol > li > img {
+	display:block;
+	height:20px;
+	width:20px;
+}
