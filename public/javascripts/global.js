@@ -1,9 +1,9 @@
 $(document).ready(function() {
 	resizeStream();
 });
-$(window).resize(function(e) {
-	resizeStream();
-});
+//$(window).resize(function(e) {
+//	resizeStream();
+//});
 $("a.about").on("click", function(e) {
 	$("a.about").after("<div id='about-data'></div>");
 	$.get('/about', function(data){

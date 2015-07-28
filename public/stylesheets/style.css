@@ -59,6 +59,7 @@ a.about:hover {
 }
 .contents {
 	padding: 0 170px;
+	min-width: 808px;
 }
 
 .contents header {
@@ -79,7 +80,7 @@ a.about:hover {
   	border-image-slice: 1;
 	padding: 3px;
 	float:left;
-	width:68.2%;
+	width:758px;
 	position: relative;
 }
 object {
@@ -418,4 +419,16 @@ object {
 
 .bracket-container > ul.brackets > li.lower-bracket > ul:nth-child(1) {
 	padding-top:53px;
+}
+
+@media only screen and (max-width:1435px) {
+	.chat {
+		float:none;
+		margin:3px 0;
+	}
+	.chat > iframe {
+		height:500px;
+		width:100%;
+		position: relative;
+	}
 }
