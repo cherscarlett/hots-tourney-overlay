@@ -1,0 +1,18 @@
+ul.brackets
+	each tier, i in bracketInfo
+		li(class= i+"-bracket")
+			each subtier, i in tier
+				ul(class= "subtier-bracket")
+					each matchup, i in subtier
+						if i == "team1"
+							li
+								span= matchup.name
+						else if i == "team2"
+							li
+								span= matchup.name
+						else
+							li
+								ul(class= "lowest-bracket")
+									each match in matchup
+										li
+											span= match.name

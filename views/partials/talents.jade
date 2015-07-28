@@ -9,4 +9,6 @@ each team in teams
 							for t, i in talents
 								if i == talent
 									img(src= t)
+									if player.heroic != "available"
+										span.heroic-cooldown On Cooldown
 									span= talent

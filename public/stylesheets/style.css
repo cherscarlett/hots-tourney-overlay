@@ -334,13 +334,13 @@ object {
 	line-height: 25px;
 	text-align: right;
 	height:20px;
-	background: linear-gradient(to left, rgba(0, 0, 0, 1),  rgba(6, 0, 42, .3));
+	background: linear-gradient(to left, rgba(0, 0, 0, 1),  rgba(6, 0, 42, 0));
 }
 
 .talents-container > ul.red-talents > li > span.hero-name {
 	float: right;
 	text-align: left;
-	background: linear-gradient(to right, rgba(0, 0, 0, 1),  rgba(6, 0, 42, .3));
+	background: linear-gradient(to right, rgba(0, 0, 0, 1),  rgba(6, 0, 42, 0));
 }
 .talents-container > ul > li > ol > li {
 	float:left;
@@ -371,4 +371,51 @@ object {
 	display:block;
 	height:20px;
 	width:20px;
+}
+
+.bracket-container ul {
+	padding:5px 20px 5px 0;
+	float:right;
+}
+.bracket-container li span{
+	position:relative;
+	z-index: 6;
+	text-transform: uppercase;
+	color:#FFF;
+	text-shadow: 0 0 8px #009cff;
+	font-size: .9em;
+}
+.bracket-container li span:before {
+	background: rgba(0, 0, 0, .6);
+	content:'';
+	height:25px;
+	width:190px;
+	display:block;
+	transform: scaleX(1) scaleY(1) scaleZ(1) skewX(-20deg);
+  	transform-origin: 50% 50% 0;
+  	box-shadow: 0 0 4px #000;
+  	margin-bottom:-19px;
+  	margin-left:-10px;
+  	z-index: 5;
+}
+.bracket-container ul.subtier-bracket {
+	padding-top:20px;
+}
+.bracket-container ul.lowest-bracket {
+	padding-top:10px;
+}
+
+.bracket-container > ul.brackets > li.upper-bracket > ul:nth-child(1) {
+	padding-top:123px;
+}
+.bracket-container > ul.brackets > li.upper-bracket > ul:nth-child(2) {
+	padding-top:53px;
+}
+
+.bracket-container > ul.brackets > li.upper-bracket > ul:nth-child(2) > li:nth-child(2) > ul.lowest-bracket {
+	padding-top:70px;
+}
+
+.bracket-container > ul.brackets > li.lower-bracket > ul:nth-child(1) {
+	padding-top:53px;
 }

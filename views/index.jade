@@ -14,7 +14,7 @@ block content
 					param(name="allowScriptAccess" value="always")
 					param(name="allowNetworking" value="all")
 					param(name="allowFullScreen" value="true")
-					param(name="flashvars" value="channel=blizzheroes&auto_play=true&start_volume=25&videoId=v8032793")
+					param(name="flashvars" value="channel=blizzheroes&auto_play=true&start_volume=25&videoId=v8032793&initial_time=600s")
 			div.tools
 				ul
 					li#talents
@@ -27,5 +27,5 @@ block content
 						a(href="javascript:;")
 							span Bracket
 			div.chat
-				// iframe(frameborder="0" scrolling="yes" id="chat_embed" src="http://www.twitch.tv/blizzheroes/chat")
+				iframe(frameborder="0" scrolling="yes" id="chat_embed" src="http://www.twitch.tv/blizzheroes/chat")
 			div.clear
