@@ -1,22 +1,27 @@
 $(document).ready(function() {
 	resizeStream();
 });
-//$(window).resize(function(e) {
-//	resizeStream();
-//});
+
+$(window).resize(function(e) {
+	resizeStream();
+});
+
 $("a.about").on("click", function(e) {
-	$("a.about").after("<div id='about-data'></div>");
+	$("a.about").after("<div id='about-data' class='about-container'></div>");
 	$.get('/about', function(data){
-		$("#about-data").html(data);
+		$("#about-data").html(data).addClass("about-open");
 	});
 });
+
 $("li > a").on("click", function(e) {
 	var $parent = $(this).parent(),
 		dataType = $parent.attr("id");
-	handleOverlay(dataType, $parent);
+	handleOverlay(dataType, $parent, transformOverlay);
 });
+
 $(".contents").on("click", ".close", function(e) {
-	closeWindow(this);
+	var c = function() {closeWindow(this)};
+	transformOverlay("about", c);
 });
 
 function closeWindow(object) {
@@ -30,12 +35,15 @@ function resizeStream(e) {
 	$s.css("height", h+"px");
 }
 
-function handleOverlay(dataType, parent) {
+function handleOverlay(dataType, parent, callback) {
 	var $parent = parent,
 		$stream = $(".stream"),
 		old = $(".active").attr("id"),
-		$old = $("."+old+"-container");
-	if ($old) { closeWindow($old.children(":first"));}
+		$old = $("."+old+"-container"),
+		closeW = function() { closeWindow($old.children(":first"))};
+	if ($old.length) { 
+		transformOverlay(old, $old.one("transitionend, webkitTransitionEnd", closeW));
+	}
 	if ($parent.hasClass("active")) {
 		$(".active").removeClass("active");
 	}
@@ -44,7 +52,15 @@ function handleOverlay(dataType, parent) {
 		$parent.addClass("active");
 		$stream.append("<div class='"+dataType+"-container stream-overlay'></div>");
 		$.get('/'+dataType, function(data){
-			$("."+dataType+"-container").html(data);
+			var $container = $("."+dataType+"-container");
+			$container.html(data);
+			$container.children(":first").css("left"); // give children something to transition from ... browser y u make me do dis?
+			callback(dataType, null);
 		});
+
 	}
+}
+
+function transformOverlay(dataType, callback) {
+	$("."+dataType+"-container").toggleClass(dataType+"-open");
 }
