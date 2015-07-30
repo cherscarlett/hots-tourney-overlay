@@ -92,17 +92,19 @@ object {
 .chat {
 	float:right;
 	margin:3px;
+	width:calc(31% - 50px);
+	min-width: 291px;
 }
 .chat > iframe {
-	height:467px;
-	width:292px;
+	min-height: 462px;
+	width:100%;
 }
 .tools {
 	float:left;
 }
 .tools > ul {
 	padding-top:15px;
-	width:25px;
+	width:31px;
 }
 .tools > ul > li > a > span {
 	position: absolute;
@@ -416,6 +418,15 @@ object {
 	padding:5px 20px 5px 0;
 	float:right;
 }
+.bracket-container > ul.brackets {
+	position: absolute;
+	width:662px;
+	right:0;
+	top:0;
+	bottom:0;
+	height:404px;
+	margin:auto;
+}
 .bracket-container li span{
 	position:relative;
 	z-index: 6;
@@ -466,10 +477,10 @@ object {
 	.chat {
 		float:none;
 		margin:3px 0;
+		width:100%;
 	}
 	.chat > iframe {
 		height:500px;
-		width:100%;
 		position: relative;
 	}
 }

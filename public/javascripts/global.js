@@ -31,8 +31,10 @@ function closeWindow(object) {
 function resizeStream(e) {
 	var $s = $(".stream"), 
 		w = $s.innerWidth(),
-		h = w*(3/5);
+		h = w*(3/5), 
+		$c = $(".chat > iframe");
 	$s.css("height", h+"px");
+	$c.css("height", parseInt(h+4)+"px");
 }
 
 function handleOverlay(dataType, parent, callback) {
@@ -54,7 +56,7 @@ function handleOverlay(dataType, parent, callback) {
 		$.get('/'+dataType, function(data){
 			var $container = $("."+dataType+"-container");
 			$container.html(data);
-			$container.children(":first").css("left"); // give children something to transition from ... browser y u make me do dis?
+			$container.children(":first").css("left"); // give children something to transition from ... browser y u make me do dis? pls learn to reflow on your own t.t
 			callback(dataType, null);
 		});
 
