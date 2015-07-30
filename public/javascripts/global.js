@@ -34,7 +34,7 @@ function resizeStream(e) {
 		h = w*(3/5), 
 		$c = $(".chat > iframe");
 	$s.css("height", h+"px");
-	$c.css("height", parseInt(h+4)+"px");
+	$c.css("height", parseInt(h+6)+"px");
 }
 
 function handleOverlay(dataType, parent, callback) {
