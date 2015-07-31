@@ -62,16 +62,18 @@ a.about:hover {
 	min-width: 808px;
 }
 
-.contents header {
+.contents > header {
 	text-indent: -10000px;
 	background:transparent url('/images/logo.png') 0 -20px no-repeat;
 	height:140px;
 	width:249px;
 	float:left;
+  	transition: all .6s ease-in-out;
 }
 .stream-container {
 	background-color:rgba(13, 1, 25, .7);
 	clear:both;
+  	transition: all .6s ease-in-out;
 }
 .stream {  
 	background:#0d0119;
@@ -169,10 +171,10 @@ object {
 	background-color:rgba(13, 1, 25, .7);
 	border-radius: 3px;
 	font-size:.8em;
-	padding:25px;
+	padding:25px 100px;
 	position:absolute;
-	width:50%;
-	right:170px;
+	left: 170px;
+	right: 170px;
 	margin-top:25px;
 	z-index: 101;
 	opacity:0;
@@ -184,8 +186,15 @@ object {
 	opacity:1;
 	transform:scale(1);	
 }
-#about-data > a.close {
-	float:right;
+.about-active > .stream-container, .about-active > header, .about-active > .about {
+    -webkit-filter: blur(10px);
+    filter: blur(10px);
+}
+
+a.close {
+	position: absolute;
+	bottom:25px;
+	right:100px;
 	font-size: .75em;
 	text-decoration: none;
 }

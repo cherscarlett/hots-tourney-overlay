@@ -11,10 +11,17 @@ $(window).resize(function() {
 });
 
 $("a.about").on("click", function() {
-	$("a.about").after("<div id='about-data' class='about-container'></div>");
-	$.get('/about', function(data){
-		$("#about-data").html(data).addClass("about-open");
-	});
+	if ($("#about-data").length) {
+		closeWindow($(".close"));
+	}
+	else {
+		$("a.about").after("<div id='about-data' class='about-container'></div>");
+		$.get('/about', function(data){
+			$("#about-data").html(data).addClass("about-open");
+			$(".contents").addClass("about-active");
+			resizeOverlays();
+		});
+	}
 });
 
 $("li > a").on("click", function() {
@@ -24,6 +31,7 @@ $("li > a").on("click", function() {
 });
 
 $(".contents").on("click", ".close", function(e) {
+	$(".about-active").removeClass("about-active");
 	var c = function() {closeWindow(this)};
 	transformOverlay("about", c);
 });
@@ -42,9 +50,15 @@ function resizeStream() {
 }
 
 function resizeOverlays() {
-	var $t = $(".blue, .red");
+	var $t = $(".blue, .red"),
+		$a = $("#about-data");
+
 	if ($t.length) {
 		$t.css("padding-top", parseInt((h-396)/2)+"px");
+	}
+
+	if ($a.length) {
+		$a.css("height", parseInt(h+115)+"px");
 	}
 }
 
