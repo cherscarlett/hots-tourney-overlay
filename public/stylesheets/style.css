@@ -210,7 +210,7 @@ object {
 	padding-top:30px;
 	width:250px;
 	position: absolute;
-  	transition: all .6s ease-in-out;
+  	transition: left .6s ease-in-out, right .6s ease-in-out;
 }
 
 
@@ -231,12 +231,7 @@ object {
 	right:0;
 }
 
-.team-wrapper {
-	height:100%;
-	position:relative;
-}
-
-.team-wrapper > h1 {
+h1.team-deets {
 	margin-bottom:30px;
 	position:relative;
 }

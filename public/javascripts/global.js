@@ -1,19 +1,23 @@
+var $s = $(".stream"), 
+	w = $s.innerWidth(),
+	h = w*(3/5);
+
 $(document).ready(function() {
+	resizeStream();	
+});
+
+$(window).resize(function() {
 	resizeStream();
 });
 
-$(window).resize(function(e) {
-	resizeStream();
-});
-
-$("a.about").on("click", function(e) {
+$("a.about").on("click", function() {
 	$("a.about").after("<div id='about-data' class='about-container'></div>");
 	$.get('/about', function(data){
 		$("#about-data").html(data).addClass("about-open");
 	});
 });
 
-$("li > a").on("click", function(e) {
+$("li > a").on("click", function() {
 	var $parent = $(this).parent(),
 		dataType = $parent.attr("id");
 	handleOverlay(dataType, $parent, transformOverlay);
@@ -28,13 +32,20 @@ function closeWindow(object) {
 	$(object).parent().remove();
 }
 
-function resizeStream(e) {
-	var $s = $(".stream"), 
-		w = $s.innerWidth(),
-		h = w*(3/5), 
-		$c = $(".chat > iframe");
+function resizeStream() {
+	var	$c = $(".chat > iframe");
+
 	$s.css("height", h+"px");
 	$c.css("height", parseInt(h+6)+"px");
+
+	resizeOverlays();
+}
+
+function resizeOverlays() {
+	var $t = $(".blue, .red");
+	if ($t.length) {
+		$t.css("padding-top", parseInt((h-396)/2)+"px");
+	}
 }
 
 function handleOverlay(dataType, parent, callback) {
@@ -58,6 +69,7 @@ function handleOverlay(dataType, parent, callback) {
 			$container.html(data);
 			$container.children(":first").css("left"); // give children something to transition from ... browser y u make me do dis? pls learn to reflow on your own t.t
 			callback(dataType, null);
+			if (dataType == 'teams') { resizeOverlays(h); }
 		});
 
 	}
