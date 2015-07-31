@@ -5,10 +5,10 @@ each team in teams
 				span.hero-name= player.hero
 				ol
 					each talent, i in player.talents 
-						li(class=( i == 10 ) ? i+"-tier-talent heroic-tier-talent" : i+"-tier-talent")
+						li.each-talent(class=( i == 10 ) ? i+"-tier-talent heroic-tier-talent" : i+"-tier-talent")
 							for t, i in talents
 								if i == talent
-									img(src= t)
+									img.talent-image(src= t)
 									if player.heroic != "available"
 										span.heroic-cooldown On Cooldown
-									span= talent
+									span.talent-name= talent

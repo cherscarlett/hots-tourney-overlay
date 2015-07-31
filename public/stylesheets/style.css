@@ -93,7 +93,7 @@ object {
 	float:right;
 	margin:3px;
 	width:calc(31% - 50px);
-	min-width: 291px;
+	min-width: 290px;
 }
 .chat > iframe {
 	min-height: 462px;
@@ -205,11 +205,14 @@ object {
 	opacity: 1;
 }
 .teams-container > div {
-	height:100%;
+  	top:0;
+  	bottom:0;
+	padding-top:30px;
 	width:250px;
 	position: absolute;
   	transition: all .6s ease-in-out;
 }
+
 
 .teams-container > .blue {
 	background: url('/images/teams-bg.png') top left repeat, linear-gradient(to right, rgba(0, 0, 0, 1),  rgba(6, 0, 42, .3));
@@ -227,12 +230,17 @@ object {
 .teams-open > .red {
 	right:0;
 }
-.teams-container > div > h1 {
-	margin:30px 0;
+
+.team-wrapper {
+	height:100%;
 	position:relative;
 }
-.teams-container > div > h1 > span {
-	/* background: linear-gradient(135deg, #7db9e8 0%,#2989d8 13%, #000111 100%); */
+
+.team-wrapper > h1 {
+	margin-bottom:30px;
+	position:relative;
+}
+span.team-name {
 	background: #213778;
 	width:57px;
 	height:100px;
@@ -243,10 +251,10 @@ object {
   	margin:0 auto;
 }
 
-.teams-container > .red > h1 > span {
+.red span.team-name {
 	background:#b41222;
 }
-.teams-container > div > h1 > span:before, .teams-container > div > h1 > span:after {
+span.team-name:before, span.team-name:after {
   position: absolute;
   top: 0;
   right: 0;
@@ -256,10 +264,10 @@ object {
   content: '';
   transform: rotate(60deg);
 }
-.teams-container > div > h1 > span:after {
+span.team-name:after {
   transform: rotate(-60deg);
 }
-.teams-container > div > h1 > img {
+img.team-logo {
 	max-width:120px;
 	max-height: 78px;
 	position: absolute;
@@ -271,27 +279,24 @@ object {
 	text-transform: uppercase;
 	color:#FFF;
 	text-shadow: 0 0 8px #009cff;
-}
-
-.team-lineup {
 	margin-top:-10px;
 }
-.team-lineup > li {
+
+li.even, li.odd {
 	padding:5px 0 10px 60px;
 	clear:both;
 }
 
-.team-lineup > li.even {
+li.even {
 	margin-left:35px;
 }
-
-.team-lineup > li > span.player-photo {
+span.player-photo {
 	float:left;
 	position: relative;
 	z-index: 5;
 	margin:-8px 0 0 -38px;
 }
-.team-lineup > li > span.player-photo > img {
+span.player-photo > img {
 	display:block;
 	max-height:46px;
 	max-width:46px;
@@ -300,10 +305,10 @@ object {
   	box-shadow: 0 0 4px #54a9f4;
 	background: linear-gradient(to bottom,#43286b 0,#14324a 100%);
 }
-.red > .team-lineup > li > span.player-photo > img {
+.red span.player-photo > img {
   	box-shadow: 0 0 4px #f58a9c;
 }
-.team-lineup > li > span:not(.player-photo)	 {
+.team-lineup span:not(.player-photo)	 {
 	display:block;
 	position: relative;
 	font-size:.9em;
@@ -312,7 +317,7 @@ object {
 	text-indent: 6px;
 }
 
-.team-lineup > li > span:not(.player-photo):after {
+.team-lineup span:not(.player-photo):after {
 	background: rgba(255, 255, 255, .1);
 	content:'';
 	height:20px;
@@ -327,12 +332,12 @@ object {
   	margin-left:-10px;
 }
 
-.team-lineup > li > span.hero {
+.team-lineup span.hero {
 	font-size:.7em;
 	line-height: 15px;
 }
 
-.team-lineup > li > span.hero:after {
+.team-lineup span.hero:after {
 	width:100px;
 	height:15px;
 	margin-top:0px;
@@ -358,7 +363,7 @@ object {
 }
 
 
-.talents-container > ul > li > span.hero-name {
+span.hero-name {
 	text-transform: uppercase;
 	padding:0 5px;
 	color:#FFF;
@@ -384,7 +389,7 @@ object {
 	width:20px;
 }
 
-.talents-container > ul > li > ol > li > span {
+span.talent-name {
 	position: absolute;
 	opacity: 0;
 	display: block;
@@ -400,10 +405,10 @@ object {
 	white-space: nowrap;
 }
 
-.talents-container > ul > li > ol > li:hover > span {
+li.each-talent:hover > span.talent-name {
 	opacity: 1;
 }
-.talents-container > ul > li > ol > li > img {
+img.talent-image {
 	display:block;
 	height:20px;
 	width:20px;
@@ -418,7 +423,7 @@ object {
 	padding:5px 20px 5px 0;
 	float:right;
 }
-.bracket-container > ul.brackets {
+ul.brackets {
 	position: absolute;
 	width:662px;
 	right:0;
@@ -449,25 +454,25 @@ object {
   	margin-left:-10px;
   	z-index: 5;
 }
-.bracket-container ul.subtier-bracket {
+ul.subtier-bracket {
 	padding-top:20px;
 }
-.bracket-container ul.lowest-bracket {
+ul.lowest-bracket {
 	padding-top:10px;
 }
 
-.bracket-container > ul.brackets > li.upper-bracket > ul:nth-child(1) {
+li.upper-bracket > ul:nth-child(1) {
 	padding-top:123px;
 }
-.bracket-container > ul.brackets > li.upper-bracket > ul:nth-child(2) {
+li.upper-bracket > ul:nth-child(2) {
 	padding-top:53px;
 }
 
-.bracket-container > ul.brackets > li.upper-bracket > ul:nth-child(2) > li:nth-child(2) > ul.lowest-bracket {
+li.upper-bracket > ul:nth-child(2) > li:nth-child(2) > ul.lowest-bracket {
 	padding-top:70px;
 }
 
-.bracket-container > ul.brackets > li.lower-bracket > ul:nth-child(1) {
+li.lower-bracket > ul:nth-child(1) {
 	padding-top:53px;
 }
 

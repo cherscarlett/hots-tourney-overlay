@@ -1,12 +1,13 @@
 each team in teams
 	div(class = team.teamColor)
-		h1
-			span= team.teamName 
-			img(src= team.teamLogo)
-		ul.team-lineup
-			each player, i in team.players
-				li(class=(i % 2 == 0) ? 'even' : 'odd')
-					span.player-photo
-						img(src= player.photo)
-					span.name= player.name
-					span.hero= player.hero
+		div(class = "team-wrapper")
+			h1
+				span.team-name= team.teamName 
+				img.team-logo(src= team.teamLogo)
+			ul.team-lineup
+				each player, i in team.players
+					li(class=(i % 2 == 0) ? 'even' : 'odd')
+						span.player-photo
+							img(src= player.photo)
+						span.name= player.name
+						span.hero= player.hero
