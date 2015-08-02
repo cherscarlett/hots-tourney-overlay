@@ -27,17 +27,14 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 
-app.get('/about', function(req, res) {
-  res.render('partials/about');
+app.get('/:page', function(req, res) {
+  var page = req.params.page;
+  res.render('partials/'+page, {teams: teams, talents: talents, bracketInfo: bracketInfo});
 });
-app.get('/talents', function(req, res) {
-  res.render('partials/talents', {teams: teams, talents: talents});
-});
-app.get('/teams', function(req, res) {
-  res.render('partials/teams', {teams: teams});
-});
-app.get('/bracket', function(req, res) {
-  res.render('partials/bracket', {bracketInfo: bracketInfo});
+
+app.get('/:page/:include', function(req, res) {
+  var include = req.params.include;
+  res.render('partials/includes/'+include);
 });
 
 // catch 404 and forward to error handler

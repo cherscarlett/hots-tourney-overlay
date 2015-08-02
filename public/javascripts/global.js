@@ -11,17 +11,13 @@ $(window).resize(function() {
 });
 
 $("a.about").on("click", function() {
-	if ($("#about-data").length) {
-		closeWindow($(".close"));
-	}
-	else {
-		$("a.about").after("<div id='about-data' class='about-container'></div>");
-		$.get('/about', function(data){
-			$("#about-data").html(data).addClass("about-open");
-			$(".contents").addClass("about-active");
-			resizeOverlays();
-		});
-	}
+	$("a.about").after("<div id='about-data' class='about-container' />");
+	$.get('/about', function(data){
+		$("#about-data").html(data).addClass("about-open");
+		$(".contents").addClass("about-active");
+		$(".about-content > div").addClass("about-panel-active");
+		resizeOverlays();
+	});
 });
 
 $("li > a").on("click", function() {
@@ -32,8 +28,40 @@ $("li > a").on("click", function() {
 
 $(".contents").on("click", ".close", function(e) {
 	$(".about-active").removeClass("about-active");
-	var c = function() {closeWindow(this)};
-	transformOverlay("about", c);
+	transformOverlay("about", closeWindow);
+});
+
+$(".contents").on("click", ".nav-controls > a:not(.inactive)", function() {
+	var panels = ["blurb", "structure", "functions", "styles"],
+		$current = $(".about-panel-active"),
+		current = $current.attr("id"),
+		indexOfCurrent = panels.indexOf(current), 
+		direction = $(this).attr("id"),
+		next = "",
+		prev = "",
+		newCurrent = "";
+
+	if (direction === "next") {
+		if (indexOfCurrent+2 < panels.length) {
+			next = panels[indexOfCurrent+2];
+		}
+		else {
+			next = "inactive";
+		}
+		newCurrent = panels[indexOfCurrent+1];
+		prev = current;
+	}
+	if (direction === "prev") {
+		if (indexOfCurrent === 1) {
+			prev = "inactive";
+		}
+		else {
+			prev = panels[indexOfCurrent-2];
+		}
+		newCurrent = panels[indexOfCurrent-1];
+		next = current;
+	}
+	handleAboutContent(direction, prev, current, next, newCurrent, null);
 });
 
 function closeWindow(object) {
@@ -58,7 +86,7 @@ function resizeOverlays() {
 	}
 
 	if ($a.length) {
-		$a.css("height", parseInt(h+115)+"px");
+		$a.css("height", parseInt(h+65)+"px");
 	}
 }
 
@@ -68,6 +96,7 @@ function handleOverlay(dataType, parent, callback) {
 		old = $(".active").attr("id"),
 		$old = $("."+old+"-container"),
 		closeW = function() { closeWindow($old.children(":first"))};
+
 	if ($old.length) { 
 		transformOverlay(old, $old.one("transitionend, webkitTransitionEnd", closeW));
 	}
@@ -77,18 +106,55 @@ function handleOverlay(dataType, parent, callback) {
 	else {
 		$(".active").removeClass("active");
 		$parent.addClass("active");
-		$stream.append("<div class='"+dataType+"-container stream-overlay'></div>");
+		$stream.append("<div class='"+dataType+"-container stream-overlay' />");
 		$.get('/'+dataType, function(data){
 			var $container = $("."+dataType+"-container");
 			$container.html(data);
 			$container.children(":first").css("left"); // give children something to transition from ... browser y u make me do dis? pls learn to reflow on your own t.t
 			callback(dataType, null);
-			if (dataType == 'teams') { resizeOverlays(h); }
+			if (dataType === 'teams') { resizeOverlays(h); }
 		});
-
 	}
 }
 
 function transformOverlay(dataType, callback) {
 	$("."+dataType+"-container").toggleClass(dataType+"-open");
+	if (dataType === "about") {
+		var c = function() { callback($(".close"))};
+		$(".about-container").one("transitionend, webkitTransitionEnd", c);
+	}
+	else {
+		callback;
+	}
+}
+
+function handleAboutContent(direction, prev, old, next, current, callback) {
+	var $a = $(".about-content"),
+		$o = $("#"+old),
+		$n = $("#next"),
+		$p = $("#prev"),
+		panel = current,
+		newClass = "", 
+		c = function() { $o.remove();};
+
+	$o.removeClass();
+
+	if (direction === "next") {
+		newClass = "about-previous-panel";
+		$n.removeClass().addClass(next).find("span").html("Next: "+next);
+		$p.removeClass().addClass(old).find("span").html("Previous: "+old);
+	}
+	else {
+		newClass = "about-next-panel";
+		$n.removeClass().addClass(old).find("span").html("Next: "+old);
+		$p.removeClass().addClass(prev).find("span").html("Previous: "+prev);
+	}
+
+	$o.addClass(newClass);
+	$(".inactive").find("span").html("");
+	$o.one("transitionend, webkitTransitionEnd", c);
+	$.get('/about/'+panel, function(data) {
+		$a.append(data);
+		$("#"+panel).addClass("about-panel-active");
+	});
 }

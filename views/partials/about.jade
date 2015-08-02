@@ -1,25 +1,8 @@
-p 
-	span This overlay demo was conceptualized and built by Cher Stewart with the goal of learning Express, Jade and Node.js in hopes of acquiring a position with Blizzard Entertainment working on the Web & Mobile team, with a specialization in eSports. This demo utilizes static JSON files to simulate the data that would be live-updated in a real use-case.
-	br
-	br
-	span The idea for a self-hosted video feed comes from an interesting problem I discussed with both Dustin Browder and Mike Morhaime in interviews at Heroes of the Dorm. One of the main complaints from people who play and understand the game really well is a lack of information on the screen. This simpler UI that we see during tournaments has been favored because too much information can be confusing for newer or non-players and discourage them from enjoying watching the game. 
-	br
-	br
-	span The solution for this from other franchises has been to run two different streams, one with a simple UI and one with an advanced UI. Browder mentioned he was against this because it divides the community, and that's not in-line with Blizzard's core values. 
-	br
-	br
-	span The idea of a hosted page with the stream and chat embedded with the simple UI leads to the option of a client-responsive chrome. This allows the viewer to choose how much and when they want to see live-updating information, such as team composition, talents and bracketology, without dividing the community. 
-	br
-	br
-	span Ideas Not Implemented in Demo:
-	br
-	br
-	ul 
-		li - Team overlay links to team/player profiles on Blizz eSports portal
-		li - Theatre mode with overlay toolbar
-		li - Bracket overlay links to team profiles on Blizz eSports portal
-		li - Hero info: kills, deaths, damage, healing, experience overlay
-		li - Instant access to replay (using Twitch vods)
-		li - Link to talent details on Talents overlay
-		li - Bracketology information
+div.about-content
+	include includes/blurb.jade
+div.nav-controls
+	a(href="javascript:;")#prev.inactive 
+		span.prev-text  
+	a(href="javascript:;")#next.structure
+		span.next-text Next: Structure
 a(href="javascript:;").close Close Window
