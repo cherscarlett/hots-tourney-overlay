@@ -1,0 +1,181 @@
+#structure
+	h1 Structure
+	ul.structure-hierarchy
+		li.code
+			= "app.js"
+			pre
+				code
+					include ../../../app.js
+		li package.json
+		li
+			h2 Data
+			ul
+				li.code
+					= "bracket-info.json"
+					pre
+						code
+							include ../../../data/bracket-info.json
+				li.code
+					= "talents.json"
+					pre
+						code
+							include ../../../data/talents.json
+				li.code
+					= "teams.json"
+					pre
+						code
+							include ../../../data/teams.json
+		li node_modules
+		li
+			h2 Routes
+			ul
+				li.code
+					= "index.js"
+					pre
+						code
+							include ../../../routes/index.js
+		li.clear
+			h2 Views
+			ul
+				li error.jade
+				li.code
+					= "index.jade"
+					pre
+						code
+							| extends layout
+							| block content
+							|	header.chrome
+							|		h1.title= title
+							|		p This is merely a demo built using Express, Jade and the Twitch API in node.js. The application is deployed and is currently running on Heroku.
+							|	div.contents
+							|		header Heroes of the Storm
+							|		a(href="javascript:;").about About This Demo
+							|		div.stream-container
+							|			div.stream 
+							|				object(bgcolor="#0d0119" data="http://www.twitch.tv/swflibs/TwitchPlayer.swf" height="458" id="clip_embed_player_flash" type="application/x-shockwave-flash" width="750")
+							|					param(name="movie" value="http://www.twitch.tv/swflibs/TwitchPlayer.swf")
+							|					param(name="allowScriptAccess" value="always")
+							|					param(name="allowNetworking" value="all")
+							|					param(name="allowFullScreen" value="true")
+							|					param(name="flashvars" value="channel=blizzheroes&auto_play=true&start_volume=25&videoId=v8032793&initial_time=600s")
+							|			div.tools
+							|				ul
+							|					li#talents
+							|						a(href="javascript:;")
+							|							span Talents
+							|					li#teams
+							|						a(href="javascript:;")
+							|							span Teams
+							|					li#bracket
+							|						a(href="javascript:;")
+							|							span Bracket
+							|			div.chat
+							|				iframe(frameborder="0" scrolling="yes" id="chat_embed" src="http://www.twitch.tv/blizzheroes/chat")
+							|			div.clear
+				li.code
+					= "layout.jade"
+					pre
+						code
+							| doctype html
+							| html
+							| head
+							|   title= title
+							|   link(rel='stylesheet', href='/stylesheets/_reset.css')
+							|   link(rel='stylesheet', href='/stylesheets/style.css') 
+							|   link(rel='icon', href='/images/favicon.ico', type='image/x-icon')
+							| body
+							|   block content
+							|   script(src='http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js', type='text/javascript', language='javascript')
+							|   script(src='/javascripts/global.js', type='text/javascript', language='javascript')
+				li 
+					h2 Partials
+					ul
+						li.code
+							= "about.jade"
+							pre
+								code
+									| div.about-content
+									|	 include includes/blurb.jade
+									| div.nav-controls
+									|	 a(href="javascript:;")#prev.inactive 
+									|	 	span.prev-text  
+									| 	a(href="javascript:;")#next.structure
+									|	 	span.next-text Next: Structure
+									| a(href="javascript:;").close Close Window
+						li.code
+							= "bracket.jade"
+							pre
+								code
+									| ul.brackets
+									|	each tier, i in bracketInfo
+									|		li(class= i+"-bracket")
+									|			each subtier, i in tier
+									|				ul(class= "subtier-bracket")
+									|					each matchup, i in subtier
+									|						if i == "team1"
+									|							li
+									|								span= matchup.name
+									|						else if i == "team2"
+									|							li
+									|								span= matchup.name
+									|						else
+									|							li
+									|								ul(class= "lowest-bracket")
+									|									each match in matchup
+									|										li
+									|											span= match.name
+						li.code
+							= "talents.jade"
+							pre
+								code
+									| each team in teams
+									|	ul(class= team.teamColor+"-talents")
+									|		each player in team.players
+									|			li
+									|				span.hero-name= player.hero
+									|				ol
+									|					each talent, i in player.talents 
+									|						li.each-talent(class=( i == 10 ) ? i+"-tier-talent heroic-tier-talent" : i+"-tier-talent")
+									|							for t, i in talents
+									|								if i == talent
+									|									img.talent-image(src= t)
+									|									if player.heroic != "available"
+									|										span.heroic-cooldown On Cooldown
+									|									span.talent-name= talent
+						li.code
+							= "teams.jade"
+							pre
+								code
+									| each team in teams
+									|	div(class = team.teamColor)
+									|		h1.team-deets
+									|			span.team-name= team.teamName 
+									|			img.team-logo(src= team.teamLogo)
+									|		ul.team-lineup
+									|			each player, i in team.players
+									|				li(class=(i % 2 == 0) ? 'even' : 'odd')
+									|					span.player-photo
+									|						img(src= player.photo)
+									|					span.name= player.name
+									|					span.hero= player.hero
+									|						li 
+									|							h2 Includes
+									|							ul
+									|								li blurb.jade
+									|								li functions.jade
+									|								li structure.jade
+									|								li styles.jade
+		li
+			h2 Public
+			ul
+				li Fonts
+				li Images
+				li 	
+					h2 Javascripts
+					ul
+						li global.js
+				li
+					h2 Stylesheets
+					ul
+						li _reset.css
+						li style.css
