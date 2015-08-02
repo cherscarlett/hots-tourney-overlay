@@ -26,7 +26,11 @@ $("li > a").on("click", function() {
 	handleOverlay(dataType, $parent, transformOverlay);
 });
 
-$(".contents").on("click", ".close", function(e) {
+$(".contents").on("click", ".code", function() {
+	$(this).toggleClass("code-open");
+});
+
+$(".contents").on("click", ".close", function() {
 	$(".about-active").removeClass("about-active");
 	transformOverlay("about", closeWindow);
 });

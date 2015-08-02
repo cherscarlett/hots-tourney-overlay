@@ -1,7 +1,7 @@
 @font-face {
-  font-family: "Metronic";
-  src: url("/fonts/Metronic Pro Regular.otf") format("opentype");
-  font-weight: normal;
+	font-family: "Metronic";
+	src: url("/fonts/Metronic Pro Regular.otf") format("opentype");
+	font-weight: normal;
 }
 
 body {
@@ -11,7 +11,7 @@ body {
 }
 
 a {
-  color: #00B7FF;
+	color: #00B7FF;
 }
 a:hover {
 	color:#FFF;
@@ -24,6 +24,20 @@ header.chrome {
 	background-color:rgba(13, 1, 25, .7);
 	padding:20px 170px;
 	font-size:.8em;
+}
+pre {
+	display:none;
+	font-size: .8em;
+	font-family: monospace;
+	background-color:rgba(13, 1, 25, .9);
+	border-radius: 3px;
+	position: absolute;
+	opacity: 0;
+	height:0;
+	width:0;
+	padding:0;
+	margin:0;
+  	transition: opacity .6s ease-in-out;
 }
 
 /* about */
@@ -115,7 +129,60 @@ a.about:hover {
 	padding:0 25px;
 	line-height: 1.5em;
 }
+ul.structure-hierarchy {
+	padding-left: 50px;
+}
 
+ul.structure-hierarchy h2 {
+	padding-top:6px;
+}
+ul.structure-hierarchy ul {
+	padding-bottom: 6px;
+}
+ul.structure-hierarchy > li{
+	float:left;
+	width:50%;
+	padding-bottom:12px;
+}
+li.code {
+	cursor: pointer;
+}
+li.code:after {
+	background: transparent url('/images/more.png') 0 0 no-repeat;
+	height:9px;
+	width:13px;
+	content:'';
+	position:absolute;
+	margin:5px 6px;
+}
+li.code.code-open:after {
+	transform:scaleY(-1);
+}
+li.code.code-open > pre, pre.open-pre {
+	opacity: 1;
+	height: auto;
+	width: auto;
+	overflow: scroll;
+	z-index: 100;
+	border:1px solid #000;
+	margin:auto;
+	display: block;
+	position: absolute;
+	top:40px;
+	bottom:40px;
+	right:0;
+	left:0;
+	padding: 6px;
+}
+pre.open-pre {
+	top:100px;
+}
+
+li.code.code-open > pre > code {
+	height:auto;
+	width:auto;
+	padding:6px;
+}
 .about-open {
 	opacity:1;
 	transform:scale(1);	
