@@ -41,9 +41,9 @@ $(".contents").on("click", ".nav-controls > a:not(.inactive)", function() {
 		current = $current.attr("id"),
 		indexOfCurrent = panels.indexOf(current), 
 		direction = $(this).attr("id"),
-		next = "",
-		prev = "",
-		newCurrent = "";
+		next,
+		prev,
+		newCurrent;
 
 	if (direction === "next") {
 		if (indexOfCurrent+2 < panels.length) {
@@ -138,7 +138,7 @@ function handleAboutContent(direction, prev, old, next, current, callback) {
 		$n = $("#next"),
 		$p = $("#prev"),
 		panel = current,
-		newClass = "", 
+		newClass, 
 		c = function() { $o.remove();};
 
 	$o.removeClass();
