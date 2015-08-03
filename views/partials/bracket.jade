@@ -4,10 +4,7 @@ ul.brackets
 			each subtier, i in tier
 				ul(class= "subtier-bracket")
 					each matchup, i in subtier
-						if i == "team1"
-							li
-								span= matchup.name
-						else if i == "team2"
+						if i == "team1" || i == "team2"
 							li
 								span= matchup.name
 						else
