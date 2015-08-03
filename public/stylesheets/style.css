@@ -162,7 +162,7 @@ li.code.code-open > pre, pre.open-pre {
 	opacity: 1;
 	height: auto;
 	width: auto;
-	overflow: scroll;
+	overflow: auto;
 	z-index: 100;
 	border:1px solid #000;
 	margin:auto;
