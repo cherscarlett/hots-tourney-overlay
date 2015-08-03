@@ -543,7 +543,7 @@ span.hero-name {
 	padding:0 5px;
 	color:#FFF;
 	text-shadow: 0 0 8px #009cff;
-	font-size: .8em;
+	font-size: .9em;
 	float:left;
 	display: block;
 	width:75px;
@@ -664,5 +664,29 @@ li.lower-bracket > ul:nth-child(1) {
 	.chat > iframe {
 		height:500px;
 		position: relative;
+	}
+	.talents-open {
+		transform: rotateY(0deg) scale(1.15);
+    	transform-origin: bottom;
+	}
+	span.talent-name {
+		transform: scale(.9);
+	}
+	ul.brackets {
+		transform: scale(1.1);
+	}
+}
+
+@media only screen and (min-width:1650px) {
+
+	.talents-open {
+		transform: rotateY(0deg) scale(1.15);
+    	transform-origin: bottom;
+	}
+	span.talent-name {
+		transform: scale(.9);
+	}
+	ul.brackets {
+		transform: scale(1.1);
 	}
 }
